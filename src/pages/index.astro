@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Comp1 from '../components/comp1.astro';
+import Comp2 from '../components/comp2.astro';
+import Comp3 from '../components/comp3.astro';
+import Comp4 from '../components/comp4.astro';
+---
+
+<Layout title="Welcome to Mblog.">
+	<main class="flex flex-col gap-6">
+		<article class="w-[95%] mx-auto">
+			<Comp1 />
+			<Comp2 />
+		</article>
+		<aside class="w-[95%] mx-auto">
+			<Comp3 />
+		</aside>
+		<article class="py-5">
+			<Comp4 />
+		</article>
+	</main>
+</Layout>

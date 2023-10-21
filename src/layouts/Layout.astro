@@ -1,0 +1,56 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Header from '../components/header.astro';
+import './fonts/static/Inter-Bold.ttf';
+import './fonts/static/Inter-Regular.ttf'; 
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="My blogs" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@font-face {
+		font-family: "InterBold";
+		src: local('InterBold'),
+		url("./fonts/static/Inter-Bold.ttf");
+		font-weight: bold;
+	}
+	@font-face {
+		font-family: "InterRegular";
+		src: local("InterRegular"),
+		 url("./fonts/static/Inter-Regular.ttf");
+		font-weight: bold;
+	}
+	:root {
+		--fontfamilyregular: "InterRegular", sans-serif;
+		--fontfamilybold: "InterBold", sans-serif;
+		--bodyfontsize: 0.83rem;
+		--Off_white: #FFFDFA;
+		--Grayish_blue: #C5C6CE;
+		--Dark_grayish_blue: #5D5F79;
+		--Very_dark_blue: #00001A;
+		--Soft_orange: #E9AB53;
+		--Soft_red: #F15E50;
+	}
+	html {
+		font-family: var(--fontfamilyregular);
+		font-size: 16px;
+	}
+
+</style>
